@@ -16,11 +16,12 @@ test('Returned right value', () => {
 });
 
 test('Check all value', () => {
-  for(let i = 0; i < 100; i += 5) {
-    const obj = {health: i};
+  for (let i = 0; i < 100; i += 5) {
+    const obj = {};
+    obj.health = i;
     expect(colourHealth(obj)).toBeTruthy();
   }
-})
+});
 
 test('Not undefined', () => {
   expect(colourHealth(params)).not.toBeUndefined();
@@ -31,6 +32,7 @@ test('Not null', () => {
 });
 
 test('Is null', () => {
-  const obj = {health: -1};
+  const obj = {};
+  obj.health = -1;
   expect(colourHealth(obj)).toBeNull();
 });
